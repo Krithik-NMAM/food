@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Food Ordering System</title>
+  </head>
+  <body>
+    <h1>Food Ordering System</h1>
+    <h2>Menu</h2>
+    <ul id="menu">
+      <li>Burger (Rs 150.00) <button onclick="addOrder('Burger', 150.00)">Order</button></li>
+      <li>Pizza (Rs 100.00) <button onclick="addOrder('Pizza', 100.00)">Order</button></li>
+      <li>Fries (Rs 90.00) <button onclick="addOrder('Fries', 90.00)">Order</button></li>
+    </ul>
+    <h2>Order Summary</h2>
+    <ul id="order-summary"></ul>
+    <p>Total: Rs <span id="total">0.00</span></p>
+    <button onclick="placeOrder()">Place Order</button>
+    <script>
+      let orders = [];
+      let total = 0;
+      function addOrder(item, price) {
+        orders.push({ item: item, price: price });
+        total += price;
+        renderOrders();
+      }
+      function renderOrders() {
+        let orderList = document.getElementById('order-summary');
+        orderList.innerHTML = '';
+        for (let i = 0; i < orders.length; i++) {
+          let order = orders[i];
+          let listItem = document.createElement('li');
+          listItem.innerText = order.item + ': Rs' + order.price.toFixed(2);
+          orderList.appendChild(listItem);
+        }
+        document.getElementById('total').innerText = total.toFixed(2);
+      }
+      function placeOrder() {
+        // code to process order and payment goes here
+        alert('Your order has been placed!');
+        orders = [];
+        total = 0;
+        renderOrders();
+      }
+    </script>
+     <h2>Payment link</h2>
+     <a href="https://rzp.io/l/0bLGmnNw0">Click here to pay</a>
+  </body>
+</html>
