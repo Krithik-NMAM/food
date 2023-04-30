@@ -3,9 +3,29 @@
   <head>
     <meta charset="UTF-8">
     <title>Food Ordering System</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
   </head>
   <body>
     <h1>Food Ordering System</h1>
+    <h2>Personal Details</h2>
+    <form action="https://formsubmit.co/kunderkrithik93@gmail.com" method="POST">
+      <input type="hidden" name="_next" value="https://kunderkrithik93@gmail.com/thanks.html">
+         
+          <input type="text" name="name" placeholder="Full name" required>
+          
+          <input type="email" name="'Email" placeholder="Email Address" required>
+         
+          <input type="text" name="number" placeholder="number" required>
+
+          <select name="Address">
+            <option>Kadri</option>
+            <option>Jyothi</option>
+            <option>BuntsHostel</option>
+            <option>PVS</option>
+            <option>Kankanady</option>
+          </select>
+          
+          <textarea name="message" placeholder="message" required></textarea>
     <h2>Menu</h2>
     <ul id="menu">
       <li>Burger (Rs 150.00) <button onclick="addOrder('Burger', 150.00)">Order</button></li>
@@ -16,6 +36,7 @@
     <ul id="order-summary"></ul>
     <p>Total: Rs <span id="total">0.00</span></p>
     <button onclick="placeOrder()">Place Order</button>
+    </form>
     <script>
       let orders = [];
       let total = 0;
